@@ -88,6 +88,7 @@
     - TimeoutWarning
 """
 import time
+import sys
 
 # TODO: Use exceptions detector from `aiograph`.
 # TODO: aiogram.utils.exceptions.BadRequest: Bad request: can't parse entities: unsupported start tag "function" at byte offset 0
@@ -137,6 +138,8 @@ class _MatchErrorMixin:
             if err is cls:
                 continue
             if err.check(description):
+                print('ok')
+                sys.exit()
                 raise err(cls.text or description)
         raise cls(description)
 
