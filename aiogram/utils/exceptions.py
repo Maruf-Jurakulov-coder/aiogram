@@ -138,7 +138,6 @@ class _MatchErrorMixin:
             if err is cls:
                 continue
             if err.check(description):
-                print('ok')
                 sys.exit()
                 raise err(cls.text or description)
         raise cls(description)
